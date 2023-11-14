@@ -1,0 +1,84 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Facilitation achat national et international{% endblock %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid py-5" style="background-image: url({% static 'img/img7.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
+            <div class="container">
+                <h3 class="text-white mb-4 px-2 py-5 animated slideInDown" style="background-color: rgba(0, 0, 0, .4);">Facilitation d’achat national et international</h3>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid">
+            <div class="container pb-5">
+                <div class="row m-0">
+                    <div class="col-lg-8 achat">
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-12">
+                                <div class="overflow-hidden">
+                                    <h3 class="mb-2">Plateformes de vente en ligne</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/alibaba.png' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/amazon.jpg' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/ebay.png' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/cdiscount.jpg' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/euro-shopping.png' %}" alt="">
+                            </div>
+                        </div>
+
+                        <div class="row m-0 detail wow fadeInUp mt-5 mb-3" data-wow-delay=".6s">
+                            <div class="col-12">
+                                <div class="overflow-hidden">
+                                    <h4 class="mb-2">Boutiques partenaires</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/b1.jpeg' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/b2.jpeg' %}" alt="">
+                            </div>
+                            <div class="col-md-6 col-lg-4 p-1 mb-2">
+                                <img src="{% static 'img/b3.jpeg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside>
+                            <form method="post">
+                                <input type="text" name="immo-search" placeholder="Tapez votre recherche">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <ul class="list-group border-0">
+                                <li class="list-group-item">Formulaire de soumission d’une demande d’achat en ligne avec spécifications détailles</li>
+                                <li class="list-group-item">Formulaire de soumission d’une demande d’un service en ligne</li>
+                                <li class="list-group-item">Recherche lie à la base de données pour trouver une plateforme d’achat en ligne et faire ses commandes</li>
+                                <li class="list-group-item">Main d’œuvre [agent immobilier, expert, courtiers, etc.]</li>
+                                <li class="list-group-item">Formulaire de soumission d’une Demande pour référencer sa boutique en ligne [uniquement pour les vendeurs]</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+{% endblock %}

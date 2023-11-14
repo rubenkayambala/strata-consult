@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        {% include 'includes/css.html' %}
+        <title>Inscription</title>
+    </head>
+
+    <body style="background-image: url({% static 'img/logo.png' %}); background-repeat: no-repeat; background-size: contain;">
+        
+        <!-- Register Start -->
+        <div class="container-fluid p-3" style="background: transparent; position: relative;">
+            <div class="container">
+                <div class="row g-5 box wow fadeInUp justify-content-between py-3">
+                    <div class="col-lg-6 d-none d-lg-block">
+                    </div>
+                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
+                        <div class="py-2">
+                            <h2 class="mb-4 animated slideInDown" style="color: #255085;">Enregistrez-vous</h2>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <span class="alert alert-danger">{{message}}</span>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <form method="post" class="rounded contact-form mb-3">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                {{form.full_name}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.gender}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.birthday}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.profile}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.phone}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.email}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.username}}
+                            </div>
+                            <div class="mb-4">
+                                {{form.password}}
+                            </div>
+                            <button class="btn btn-primary border-0 py-2 px-3 rounded-pill" type="submit">S'enregistrer</button>
+                            ou <a href="#login" class="login-btn"><u>Se connecter</u></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Register End -->
+
+        <!-- Login Start -->
+        <div id="login" class="container-fluid form-hide">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <span>.</span>
+                </div>
+                <div class="row g-5 box wow fadeInUp justify-content-between">
+                    <div class="col-lg-6 d-none d-lg-block">
+                    </div>
+                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
+                        <img src="img/close.png" alt="" class="login-btn" id="login-close">
+                        <div class="py-2">
+                            <h2 class="mb-4 animated slideInDown" style="color: #255085;">Connectez-vous</h2>
+                        </div>
+                        <form method="post" class="rounded contact-form mb-3">
+                            <div class="mb-4">
+                                <input type="text" class="form-control p-3" placeholder="Identifiant" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control p-3" placeholder="Mot de passe" required>
+                            </div>
+                            <button class="btn btn-primary border-0 py-2 px-3 rounded-pill" type="submit">Se connecter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login End -->
+        
+        {% include 'includes/scripts.html' %}
+    </body>
+
+</html>

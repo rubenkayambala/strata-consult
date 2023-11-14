@@ -1,0 +1,39 @@
+{% extends 'back/base.html' %}
+
+{% load static %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block admin %}
+
+                    <div class="container pb-5">
+                        <div class="overflow-hidden">
+                            <h3 class="mb-4">Utilisateurs</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table border">
+                                <thead>
+                                    <th class="pb-3">Identifiant</th>
+                                    <th class="pb-3">Nom complet</th>
+                                    <th class="pb-3">Email</th>
+                                    <th class="pb-3">Téléphone</th>
+                                    <th class="pb-3">Genre</th>
+                                    <th class="pb-3">Profile</th>
+                                    <th class="pb-3">Date</th>
+                                </thead>
+                                {% for user in users %}
+                                <tr>
+                                    <td class="pb-3">{{user.username}}</td>
+                                    <td class="pb-3">{{user.full_name}}</td>
+                                    <td class="pb-3">{{user.email}}</td>
+                                    <td class="pb-3">{{user.phone}}</td>
+                                    <td class="pb-3">{{user.gender}}</td>
+                                    <td class="pb-3">{{user.profile}}</td>
+                                    <td class="pb-3">{{user.date_joined}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+
+{% endblock %}

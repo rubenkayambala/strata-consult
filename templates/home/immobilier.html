@@ -1,0 +1,76 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Immobilier et investissement{% endblock %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header py-5">
+            <div class="container">
+                <h3 class="text-white mb-4 p-2 animated slideInDown py-5" style="background-color: rgba(0, 0, 0, .3);">Businness et investissement immobilier</h3>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid">
+            <div class="container pb-5">
+                <div class="overflow-hidden">
+                    <h3 class="mb-2">Services rendus</h3>
+                </div>
+                <div class="row m-0 box">
+                    <div class="col-lg-8 items">
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-4 p-0">
+                                <img src="{% static 'img/img4.jpg' %}" alt="">
+                            </div>
+                            <div class="col-8 content">
+                                <p class="m-0 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt ex soluta dolores quas dolore, nam laboriosam doloribus fuga voluptates maiores harum repellendus libero quisquam mollitia sit exercitationem odit itaque.</p>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-4 p-0">
+                                <img src="{% static 'img/img1.jpg' %}" alt="">
+                            </div>
+                            <div class="col-8 content">
+                                <p class="m-0 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt ex soluta dolores quas dolore, nam laboriosam doloribus fuga voluptates maiores harum repellendus libero quisquam mollitia sit exercitationem odit itaque.</p>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-4 p-0">
+                                <img src="{% static 'img/img3.jpg' %}" alt="">
+                            </div>
+                            <div class="col-8 content">
+                                <p class="m-0 py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nesciunt ex soluta dolores quas dolore, nam laboriosam doloribus fuga voluptates maiores harum repellendus libero quisquam mollitia sit exercitationem odit itaque.</p>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                    </div>
+                    <div class="col-lg-4">
+                        <aside>
+                            <form method="post">
+                                <input type="text" name="immo-search" placeholder="Tapez votre recherche">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <ul class="list-group border-0">
+                                <li class="list-group-item">Formulaire d’inscription à la base de données [de la main d’œuvre] immobiliers</li>
+                                <li class="list-group-item">Formulaire de soumission d’une demande d’un service immobilier</li>
+                                <li class="list-group-item">Formulaire de soumission d’une formation [uniquement pour le formateur]</li>
+                                <li class="list-group-item">Espace de formation des candidats</li>
+                                <li class="list-group-item">Tableau de bord du candidat pour le suivi de son dossier d’emploi, de formation et d’opportunités</li>
+                                <li class="list-group-item">Bouton d’accès a notre site d’exposition des biens immobiliers</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+{% endblock %}

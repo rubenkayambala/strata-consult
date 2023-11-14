@@ -1,0 +1,39 @@
+{% extends 'back/base.html' %}
+
+{% load static %}
+
+{% block title %}Formations{% endblock %}
+
+{% block admin %}
+
+                    <div class="container pb-5">
+                        <div class="overflow-hidden">
+                            <h3 class="mb-4">Formations</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table border">
+                                <thead>
+                                    <th class="pb-3">Image</th>
+                                    <th class="pb-3">Titre</th>
+                                    <th class="pb-3">Sujet</th>
+                                    <th class="pb-3">Auteur</th>
+                                    <th class="pb-3">Durée</th>
+                                    <th class="pb-3">Coût</th>
+                                    <th class="pb-3">Date</th>
+                                </thead>
+                                {% for formation in formations %}
+                                <tr>
+                                    <td class="pb-3"><img src="{{formation.image.url}}" alt="{{formation.title}}" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                                    <td class="pb-3">{{formation.title}}</td>
+                                    <td class="pb-3">{{formation.subject.title}}</td>
+                                    <td class="pb-3">{{formation.auteur}}</td>
+                                    <td class="pb-3">{{formation.duree}}</td>
+                                    <td class="pb-3">{{formation.prix}}</td>
+                                    <td class="pb-3">{{formation.date}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+
+{% endblock %}

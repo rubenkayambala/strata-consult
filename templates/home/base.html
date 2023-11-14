@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        {% include 'includes/css.html' %}
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        
+        <!-- Navbar Start -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark navbar-expand-xxl align-items-center py-lg-0">
+                <div class="d-flex">
+                    <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"  id="navbarBtn" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-dark"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <div class="d-flex justify-content-between align-items-center px-2">
+                                <h5>MENU</h5>
+                                <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse"  id="navbarBtn" data-bs-target="#navbarCollapse">
+                                    <span class="fa fa-times text-dark"></span>
+                                </button>
+                            </div>
+                            <hr class="my-2 py-1">
+                            <a href="{% url 'home:home' %}" class="nav-item nav-link active">Accueil</a>
+                            <a href="{% url 'home:etude_sol' %}" class="nav-item nav-link">Études et expertise sols</a>
+                            <a href="{% url 'home:emploi' %}" class="nav-item nav-link">Ressources humaines, emploi et opportunités</a>
+                            <a href="{% url 'home:immobilier' %}" class="nav-item nav-link">Business et investissement immobilier</a>
+                            <a href="{% url 'home:achat' %}" class="nav-item nav-link">Facilitation achat en ligne</a>
+                            <a href="#" class="nav-item nav-link">Partenariat et affiliation</a>
+                            <a href="{% url 'home:formation' %}" class="nav-item nav-link">Formation et Renforcement de capacite</a>
+                            <a href="#" class="nav-item nav-link">Contact</a>
+                            <a href="#" class="nav-item nav-link">A propos</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'home:home' %}" class="d-flex align-items-center navbar-brand">
+                        <img src="{% static 'img/logo.png' %}" style="width: 65px;" alt="">
+                        <span style="color: #255085; padding: 0px 7px; border-left: 2px solid #255085;" class="d-none d-md-inline">STRATA CONSULT</span>
+                    </a>
+                </div>
+
+                <div class="buttons d-flex">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'accounts:profile' request.user.username %}"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">PROFILE</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'accounts:logout' %}"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">DECONNEXION</span></a>
+                    {% if user.is_superuser %}
+                    <a href="{% url 'back:dashboard' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">ADMIN</span></a>
+                    {% endif %}
+                    {% else %}
+                    <a href="#login" class="login-btn"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">CONNEXION</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+        {% block content %}{% endblock %}
+
+        <!-- Login Start -->
+        <div id="login" class="container-fluid form-hide">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <span>.</span>
+                    
+                </div>
+                <div class="row g-5 box wow fadeInUp justify-content-between">
+                    <div class="col-lg-6 d-none d-lg-block">
+                    </div>
+                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
+                        <img src="{% static 'img/close.png' %}" alt="" class="login-btn" id="login-close">
+                        <div class="py-2">
+                            <h2 class="mb-4 animated slideInDown" style="color: #255085;">Connectez-vous</h2>
+                        </div>
+                        <form method="post" action="{% url 'accounts:login' %}" class="rounded contact-form mb-3">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <input type="text" class="form-control p-3" name="username_email" placeholder="Identifiant" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control p-3" name="password" placeholder="Mot de passe" required>
+                            </div>
+                            <button class="btn btn-primary border-0 py-2 px-3 rounded-pill" type="submit">Se connecter</button>
+                            ou <a href="{% url 'accounts:register' %}"><u>S'enregistrer</u></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay=".3s">
+            <div class="container py-5">
+                <div class="row justify-content-between g-4 footer-inner">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">A propos Strata.</h4>
+                            <p>Une entreprise dynamique, passionnée pour la recherche et l’innovation ; engager à apporter des solutions aux besoins de base des entreprises et des particuliers.</p>
+                            <!-- <p class="mb-0"><a class="" href="#">PestKit </a> &copy; 2023 All Right Reserved.</p> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">Liens utiles</h4>
+                            <div class="d-flex flex-column align-items-start">
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>A propos de nous</a>
+                                <a class="btn btn-link ps-0" href="{% url 'home:contact' %}"><i class="fa fa-check me-2"></i>Nous Contacter</a>
+                                <a class="btn btn-link ps-0" href="{% url 'home:achat' %}"><i class="fa fa-check me-2"></i>Achat en ligne</a>
+                                <a class="btn btn-link ps-0" href=""><i class="fa fa-check me-2"></i>Partenariat</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">Nos coordonnées</h4>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 pb-3 border-bottom rounded-0"><i class="fa fa-map-marker-alt me-3"></i>Kinshasa RDC</a>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-phone-alt me-3"></i>+243 991 795 930</a>
+                            <a href="" class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"><i class="fa fa-envelope me-3"></i>info@example.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4 text-white" style="background-color: #303944">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                        <span>© 2023 Strata Consult, Tout droit réservé</span>
+                    </div>
+                    <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-md-4 my-auto text-center text-md-end text-white">
+                        Réalisé par <a class="border-bottom" href="#">K-360</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        {% include 'includes/scripts.html' %}
+    </body>
+
+</html>

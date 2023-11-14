@@ -1,0 +1,72 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Derail Emploi{% endblock %}
+
+{% block content %}
+
+        <!-- Blog Start -->
+        <div class="container-fluid mt-5">
+            <div class="container pb-5">
+                <div class="row m-0 box">
+                    <div class="col-lg-8 items">
+                        <div class="d-flex title">
+                            <h4 class="mb-2">{{emploi.poste}}</h4>
+                        </div>
+                        <hr class="mt-0">
+                        <img src="{{emploi.image.url}}" alt="{{emploi.pentreprise}}" style="width: 200px; height: 150px; object-fit: cover; margin-bottom: 10px;;">
+                        <div class="d-flex">
+                            <h6>Organisation: </h5> &nbsp; &nbsp;
+                            <p class="m-0">{{emploi.entreprise}}</p>
+                        </div>
+                        <div class="d-flex">
+                            <h6>Lieu: </h5> &nbsp; &nbsp;
+                            <p class="m-0">{{emploi.lieu}}</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <h6>Clôture: </h5> &nbsp; &nbsp;
+                            <p class="m-0">{{emploi.cloture}}</p>
+                        </div>
+                        <a href="#" style="padding: 10px 30px; border-radius: 20px; background-color: #204585; color: #fff;;">Postuler</a>
+
+                        <div class="d-flex title mt-4">
+                            <h4 class="mb-2">Description</h4>
+                        </div>
+                        <hr class="mt-0">
+                        <div class="d-flex">
+                            <p>{{emploi.description}}</p>
+                        </div>
+                        <div>
+                            <h6>Tâches principales</h6>
+                            <p>{{emploi.tache}}</p>
+                        </div>
+                        <div>
+                            <h6>Compétences personnelles</h6>
+                            <p>{{emploi.competence}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside>
+                            <form method="post">
+                                <input type="text" name="immo-search" placeholder="Tapez votre recherche">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                            <ul class="list-group border-0">
+                                <li class="list-group-item">Formulaire de demande d’inscription à la plate-forme</li>
+                                <li class="list-group-item">Espace d’opportunité d’emploi et appel d’offre</li>
+                                <li class="list-group-item">Formulaire d’inscription à la base de données [de la main d’œuvre] ou de soumission d’un besoin en main d’œuvre</li>
+                                <li class="list-group-item">Bouton de recherche lie à la base de données pour trouver une main d’œuvre</li>
+                                <li class="list-group-item">Espace de formation des candidats</li>
+                                <li class="list-group-item">Formulaire de soumission d’une formation [uniquement pour le formateur]</li>
+                                <li class="list-group-item">Tableau de bord du candidat pour le suivi de son dossier d’emploi, de formation et d’opportunités</li>
+                                <li class="list-group-item">Espace des candidats compètent [ main d’œuvre] avec leur profils</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+{% endblock %}

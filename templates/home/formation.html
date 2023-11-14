@@ -1,0 +1,64 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Espace formation et renforcement des capacités{% endblock %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid py-5" style="background-image: url({% static 'img/img8.jpg' %}); background-size: cover; background-position: center; margin-bottom: 6rem;;">
+            <div class="container">
+                <h3 class="text-white mb-4 px-2 animated slideInDown py-5" style="background-color: rgba(0, 0, 0, .4);">Espace formation et Renforcement des capacités</h3>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Content Start -->
+        <div class="container-fluid formation">
+            <div class="container pb-5">
+                <div class="about-item overflow-hidden">
+                    <h2 class="mb-5">Toutes les formations</h2>
+                </div>
+
+                <div class="row m-0">
+                    {% for formation in formations %}
+                    <div class="col-lg-4 col-md-6 mb-3 blog-item wow fadeInUp" data-wow-delay=".6s">
+                        <img src="{{formation.image.url}}" class="rounded-top" alt="{{formation.title}}">
+                         <div class="rounded-bottom bg-light">
+                            <div class="px-4 pb-0 py-2">
+                                <h5>{{formation.title}}</h5>
+                                <span>Par : {{formation.auteur}}</span> <br>
+                                <span>Durée : {{formation.duree}}</span>
+                            </div>
+                            <hr>
+                            <div class="p-4 py-2 text-center blog-btn">
+                                <a href="{% url 'home:detail_formation' formation.slug %}" type="button" class="text-dark">Détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row mx-0 mt-3">
+                    <div class="col-12">
+                        <h4>Trouvez les formations par sujet</h4>
+                    </div>
+                    <div class="col-12 sujet-list">
+                        <div class="d-flex">
+                            <a href="formation_sujet.html">Informatique</a>
+                            <a href="#">Entrepreneuriat</a>
+                            <a href="#">Ingegnerie</a>
+                            <a href="#">Construction</a>
+                            <a href="#">Robotique</a>
+                            <a href="#">Marketing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Content End -->
+
+{% endblock %}

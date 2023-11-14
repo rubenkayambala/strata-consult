@@ -1,0 +1,31 @@
+{% extends 'accounts/base_profile.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block profile %}
+
+                    <div class="container pb-5">
+                        <div class="overflow-hidden">
+                            <h5 class="mb-4">Mes formations</h5>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-lg-4 col-md-6 mb-3 blog-item wow fadeInUp" data-wow-delay=".6s">
+                                <img src="{{formation.image.url}}" class="rounded-top" alt="{{formation.title}}">
+                                 <div class="rounded-bottom bg-light">
+                                    <div class="px-4 pb-0 py-2">
+                                        <h5>{{formation.title}}</h5>
+                                        <span>Par : {{formation.auteur}}</span> <br>
+                                        <span>Durée : {{formation.duree}}</span>
+                                    </div>
+                                    <hr>
+                                    <div class="p-4 py-2 text-center blog-btn">
+                                        <a href="{% url 'home:detail_formation' formation.slug %}" type="button" class="text-dark">Détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}

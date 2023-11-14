@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+        {% if user.is_authenticated %}
+        <!-- Blog Start -->
+        <div class="container-fluid p-0 dash h-100">
+            <div class="row m-0 h-100">
+                <div class="col-md-3 menu h-100">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="{% url 'back:dashboard' %}" class="active">Dashboard</a></li>
+                        <li class="list-group-item"><a href="{% url 'back:users' %}">Utilisateurs</a></li>
+                        <li class="list-group-item"><a href="{% url 'back:formations' %}">Formations</a></li>
+                        <li class="list-group-item"><a href="#">Commandes</a></li>
+                        <li class="list-group-item"><a href="#">Offres d'emplois</a></li>
+                        <li class="list-group-item"><a href="#">Affiliation</a></li>
+                        <li class="list-group-item"><a href="#">Partenariat</a></li>
+                        <li class="list-group-item"><a href="#">Paramètres</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9 content">
+                    {% block admin %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+        {% else %}
+        <h1 class="text-center p-5">Veillez vous connecter pour acceder à cette page</h1>
+        {% endif %}
+
+{% endblock %}
