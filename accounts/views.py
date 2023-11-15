@@ -5,7 +5,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from .forms import UserUpdateForm
 from django.contrib.auth.decorators import login_required
-from back.models import Formation
+from back.models import Formation, Emploi
 from django.contrib.auth import get_user_model
 
 

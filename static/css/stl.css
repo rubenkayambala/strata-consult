@@ -656,13 +656,13 @@ html, body {
 
 
 /*** Detail Start ***/
-.box .items .title h4 a {
+.box .items .title h5 a {
     display: block;
     color: inherit;
     padding: 10px 20px;
 }
 
-.box .items .title h4 a.active {
+.box .items .title h5 a.active {
     border: 1px solid #aaa;
     border-bottom: none;
 }

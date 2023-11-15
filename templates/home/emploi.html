@@ -25,8 +25,9 @@
                 <div class="row m-0 box">
                     <div class="col-lg-8 items">
                         <div class="d-flex title">
-                            <h4 class="mb-"><a href="{% url 'home:emploi' %}" class="active">Offres d'emploi</a></h4>
-                            <h4 class="mb-2"><a href="{% url 'home:appel' %}" class="">Appel d'offre</a></h4>
+                            <h5 class="mb-"><a href="{% url 'home:emploi' %}" class="active">Offres d'emploi</a></h5>
+                            <h5 class="mb-2"><a href="{% url 'home:appel' %}" class="">Appel d'offre</a></h5>
+                            <h5 class="mb-2"><a href="{% url 'home:assistance_emploi' %}" class="">Assistance emploi</a></h5>
                         </div>
                         <hr class="mt-0">
                         {% for emploi in emplois %}

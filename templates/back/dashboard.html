@@ -11,33 +11,23 @@
                             <h3 class="mb-4">Tableau de bord</h3>
                         </div>
                         <div class="row m-0 box">
-                            <div class="col-12 items">
-                                <table>
-                                    <tr>
-                                        <td class="pb-3">Identifiant</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.username}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pb-3">Nom complet</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.full_name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pb-3">Genre</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.gender}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pb-3">Date de naissance</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.birthday}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pb-3">Téléphone</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.phone}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="pb-3">Email</td>
-                                        <td class="pb-3">&nbsp;&nbsp;&nbsp;&nbsp; {{request.user.email}}</td>
-                                    </tr>
-                                </table>
+                            <div class="col-md-6 col-lg-4 mb-2">
+                                <div class="text-center bg-primary rounded p-3">
+                                    <h5 class="text-white">Utilisateurs</h5>
+                                    <h2 class="text-white">{{users}}</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-2">
+                                <div class="text-center bg-danger rounded p-3">
+                                    <h5 class="text-white">Formations</h5>
+                                    <h2 class="text-white">{{formations}}</h2>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-2">
+                                <div class="text-center bg-warning rounded p-3">
+                                    <h5 class="text-white">Offres d'emploi</h5>
+                                    <h2 class="text-white">{{emplois}}</h2>
+                                </div>
                             </div>
                         </div>
                     </div>

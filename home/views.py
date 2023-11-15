@@ -38,6 +38,10 @@ def Appel(request):
     template_name = 'home/appel.html'
     return render(request, template_name)
 
+def assistance_emploi(request):
+    template_name = 'home/assistance_emploi.html'
+    return render(request, template_name)
+
 def Immobilier(request):
     template_name = 'home/immobilier.html'
     return render(request, template_name)
@@ -102,5 +106,9 @@ def UnfollowFormation(request, slug):
 
 def Contact(request):
     template_name = 'home/contact.html'
+    return render(request, template_name)
+
+def about(request):
+    template_name = 'home/about.html'
     return render(request, template_name)
     
