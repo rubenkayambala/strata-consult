@@ -169,13 +169,19 @@ html, body {
     opacity: 1;
 }
 
+.navbar-dark .navbar-toggler {
+    border-color: #ccc;
+}
+
 .navbar-toggler {
-    color: var(--bs-light) !important;
     outline: none;
+    border-radius: 0px;
+    border: none;
+    border-left: 1px solid;
+    padding-left: 15px;
 }
 
 .navbar-toggler span {
-    border: 2px solid var(--bs-primary) !important;
     padding: 5px;
 }
 
@@ -277,7 +283,7 @@ html, body {
 }
 
 .hero-section {
-    height: 580px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -288,35 +294,27 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 5%;
     z-index: 9;
 }
 
-.hero-content .left, .hero-content .right {
-    background-color: rgba(255, 255, 255, .5);
-    padding: 10px;
-    border-radius: 10px;
-}
-
 .hero-content .search {
-    background-color: rgba(255, 255, 255, .5);
-    border-radius: 30px;
+    /* background-color: rgba(255, 255, 255, .5); */
+    /* border-radius: 30px; */
     padding: 5px;
-    width: 60%;
+    width: 80%;
     margin: 0px auto;
 }
 
 .hero-content .search form {
     background-color: #fff;
-    border-radius: 20px;
-    padding: 0px 5px;
+    /* border-radius: 20px; */
 }
 
 .hero-content .search input {
     display: block;
-    width: 95%;
+    width: 93%;
     font-size: 1rem;
-    padding: 10px 5px;
+    padding: 15px 7px;
     border: none;
     outline: none;
     background: transparent;
@@ -324,11 +322,10 @@ html, body {
 
 .hero-content .search button {
     display: block;
-    width: 5%;
-    border-radius: 20px;
-    padding: 7px;
+    width: 7%;
+    padding: 15px 7px;
     text-align: center;
-    background: transparent;
+    background-color: #255085;
     border: none;
     outline: none;
 }
@@ -339,15 +336,15 @@ html, body {
 }
 
 .hero-content .secteurs .item {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 15px 10px;
-    margin-bottom: 10px;
+    width: calc(100% / 7);
+    margin-bottom: 3px;
     margin-right: 8px;
-
+    z-index: 5;
 }
 
 .hero-content .secteurs .item i {
+    width: 100px;
+    height: 100px;
     background-color: #ff5950;
     color: #fff;
     border-radius: 50%;
@@ -356,6 +353,8 @@ html, body {
 
 .hero-content .secteurs .item h5 {
     font-size: 0.9rem;
+    color: #fff;
+    padding-top: 10px;
 }
 
 .hero-content .right a {
@@ -367,6 +366,14 @@ html, body {
     background-color: #164120;
     outline: none;
     color: #fff;
+}
+
+.hero-content .bottom-blur {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 50px;
 }
 
 @media (max-width: 993px) {
@@ -501,7 +508,25 @@ html, body {
 /*** About End ***/
 
 
-/*** Services Start ***/
+/*** Services Banner Start ***/
+
+.wish-form {
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 15px 25px;
+}
+
+.wish-form * {
+    width: calc(98% / 4);
+    border: 1px solid #aaa;
+    height: 40px;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+
+
 .services-inner-icon {
     width: 130px;
     height: 130px;
