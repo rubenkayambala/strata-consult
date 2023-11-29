@@ -8,9 +8,24 @@
 
 
         <!-- Page Header Start -->
-        <div class="container-fluid py-5" style="background-image: url({% static 'img/img8.jpg' %}); background-size: cover; background-position: center; margin-bottom: 6rem;;">
-            <div class="container">
-                <h3 class="text-white mb-4 px-2 animated slideInDown py-5" style="background-color: rgba(0, 0, 0, .4);">Espace formation et Renforcement des capacités</h3>
+        <div class="container-fluid p-0" style="background-image: url({% static 'img/img8.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
+            <div style="padding: 100px 5%; background-color: rgba(0, 0, 0, 0.3);">
+                <h3 class="text-white mb-4 px-2 py-3 text-center animated slideInDown">Strata-Formation</h3>
+                <form method="post" class="wish-form">
+                    {% csrf_token %}
+                    <select name="who">
+                        <option value="-----" disabled selected>Vous êtes</option>
+                        <option value="particulier">Particulier</option>
+                        <option value="entreprise">Entreprise</option>
+                    </select>
+                    <select name="wish">
+                        <option value="-----" disabled selected>Vous voulez</option>
+                        <option value="devis">Avoir un devis</option>
+                        <option value="partenaire">Créer un compte partenaire</option>
+                    </select>
+                    <input type="text" placeholder="Localisation">
+                    <button type="submit" class="bg-primary text-white">Votre solution</button>
+                </form>
             </div>
         </div>
         <!-- Page Header End -->

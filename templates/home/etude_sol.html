@@ -8,8 +8,8 @@
 
 
         <!-- Page Header Start -->
-        <div class="container-fluid py-5" style="background-image: url({% static 'img/img4.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
-            <div style="margin: 0px 5%;">
+        <div class="container-fluid p-0" style="background-image: url({% static 'img/img4.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
+            <div style="padding: 100px 5%; background-color: rgba(0, 0, 0, 0.3);">
                 <h3 class="text-white mb-4 px-2 py-3 text-center animated slideInDown">Etude sols, sous-sols, eau et environnement</h3>
                 <form method="post" class="wish-form">
                     {% csrf_token %}
@@ -24,7 +24,7 @@
                         <option value="partenaire">Créer un compte partenaire</option>
                     </select>
                     <input type="text" placeholder="Localisation">
-                    <button type="submit">Votre solution</button>
+                    <button type="submit" class="bg-primary text-white">Votre solution</button>
                 </form>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="row m-0 box">
                     <div class="col-lg-8 items">
-                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                        <div class="row m-0 detail wow fadeInUp mb-3 border bg-white p-2" data-wow-delay=".6s">
                             <div class="col-4 p-0">
                                 <img src="{% static 'img/img4.jpg' %}" alt="">
                             </div>
@@ -50,8 +50,8 @@
                                     conception et la mise en œuvre de projets de constructions, génie civile et d’ingénierie des sols</p>
                             </div>
                         </div>
-                        <hr class="my-2">
-                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                        <!-- <hr class="my-2"> -->
+                        <div class="row m-0 detail wow fadeInUp mb-3 border bg-white p-2" data-wow-delay=".6s">
                             <div class="col-4 p-0">
                                 <img src="{% static 'img/img1.jpg' %}" alt="">
                             </div>
@@ -62,8 +62,8 @@
                                     minier</p>
                             </div>
                         </div>
-                        <hr class="my-2">
-                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                        <!-- <hr class="my-2"> -->
+                        <div class="row m-0 detail wow fadeInUp mb-3 border bg-white p-2" data-wow-delay=".6s">
                             <div class="col-4 p-0">
                                 <img src="{% static 'img/img3.jpg' %}" alt="">
                             </div>
@@ -73,8 +73,8 @@
                                     le domaines de l’eau et environnement pour la planification, la conception et la mise en œuvre de projets</p>
                             </div>
                         </div>
-                        <hr class="my-2">
-                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                        <!-- <hr class="my-2"> -->
+                        <div class="row m-0 detail wow fadeInUp mb-3 border bg-white p-2" data-wow-delay=".6s">
                             <div class="col-4 p-0">
                                 <img src="{% static 'img/img3.jpg' %}" alt="">
                             </div>
@@ -85,8 +85,8 @@
                                     projets</p>
                             </div>
                         </div>
-                        <hr class="my-2">
-                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                        <!-- <hr class="my-2"> -->
+                        <div class="row m-0 detail wow fadeInUp mb-3 border bg-white p-2" data-wow-delay=".6s">
                             <div class="col-4 p-0">
                                 <img src="{% static 'img/img3.jpg' %}" alt="">
                             </div>
@@ -98,7 +98,7 @@
                                     et la mise en œuvre de projets de ses partenaires</p>
                             </div>
                         </div>
-                        <hr class="my-2">
+                        <!-- <hr class="my-2"> -->
                     </div>
                     <div class="col-lg-4">
                         <aside>

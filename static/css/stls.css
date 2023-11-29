@@ -1,7 +1,7 @@
 html, body {
     box-sizing: border-box;
     overflow-x: hidden;
-    /* background-color: #f3f3f8; */
+    background-color: #f3f3f8;
 }
 /*** Spinner Start ***/
 #spinner {
@@ -197,6 +197,7 @@ html, body {
 
 #navbarCollapse .navbar-nav{
     width: 300px;
+    height: 100%;
 }
 
 .navbar .buttons img {
@@ -325,7 +326,8 @@ html, body {
     width: 7%;
     padding: 15px 7px;
     text-align: center;
-    background-color: #255085;
+    background-color: #ff5850;
+    color: #fff;
     border: none;
     outline: none;
 }
@@ -525,6 +527,32 @@ html, body {
     border-radius: 20px;
 }
 
+@media(max-width: 835px){
+    
+    .wish-form * {
+        width: calc(98% / 3);
+        border: 1px solid #aaa;
+        height: 40px;
+        padding: 7px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+    }
+
+}
+
+@media(max-width: 588px){
+    
+    .wish-form * {
+        width: calc(98% / 2);
+        border: 1px solid #aaa;
+        height: 40px;
+        padding: 7px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+    }
+
+}
+
 
 
 .services-inner-icon {
@@ -690,6 +718,11 @@ html, body {
 .box .items .title h5 a.active {
     border: 1px solid #aaa;
     border-bottom: none;
+}
+
+.box .items .detail:hover {
+    box-shadow: 0PX 0PX 10PX 5PX #255085;
+    transition: all 300ms;
 }
 
 .box .items .detail img {
