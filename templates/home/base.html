@@ -17,8 +17,8 @@
                         <img src="{% static 'img/logo.png' %}" style="width: 50px;" alt="">
                         <span style="font-size: 1rem; color: #255085; padding: 0px 7px; border-left: 2px solid #255085;" class="d-none d-md-inline">STRATA CONSULT</span>
                     </a>
-                    <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" id="navbarBtn" data-bs-target="#navbarCollapse" style="color: #255085; font-size: 0.95rem;">
-                        <span class="fa fa-bars" style="color: #255085;">&nbsp; MENU</span> 
+                    <button class="navbar-toggler p-0" type="button" data-bs-toggle="collapse" id="navbarBtn" data-bs-target="#navbarCollapse" style="font-size: 0.95rem; border: 1px solid; border-left: 1px solid #bbb;">
+                        &nbsp;&nbsp;<span class="fa fa-bars" style="color: #255085;">&nbsp; MENU</span> 
                     </button>
         
                     <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
@@ -37,7 +37,14 @@
                             <a href="{% url 'home:formation' %}" class="nav-item nav-link">Strata-Formation</a>
                             <a href="{% url 'home:achat' %}" class="nav-item nav-link">Facilitation achat en ligne</a>
                             <a href="{% url 'home:contact' %}" class="nav-item nav-link">Contact</a>
+                            <a href="#" class="nav-item nav-link">A propos</a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="pub">
+                    <div class="d-flex justify-content-center align-items-center" style="width: 500px; background-color: #ff5950;">
+                        <h2 class="text-white m-0 py-2">VOTRE PUBLICITE</h2>
                     </div>
                 </div>
 

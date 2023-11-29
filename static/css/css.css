@@ -126,7 +126,18 @@ html, body {
     font-size: 16px;
     outline: none;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
-    transition: .5s;
+    transition: all 100ms;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    padding: 15px;
+    color: #333333;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    border: 2px solid rgba(38, 80, 130, .7);
+    transition: all 100ms;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -237,10 +248,8 @@ html, body {
 
     position: absolute;
     right: 5% !important;
-    /* bottom: 1.25rem; */
     left: 5% !important;
     padding-top: 1.25rem;
-    /* padding-bottom: 1.25rem; */
     width: 100%;
 }
 
@@ -299,8 +308,6 @@ html, body {
 }
 
 .hero-content .search {
-    /* background-color: rgba(255, 255, 255, .5); */
-    /* border-radius: 30px; */
     padding: 5px;
     width: 80%;
     margin: 0px auto;
@@ -308,28 +315,62 @@ html, body {
 
 .hero-content .search form {
     background-color: #fff;
-    /* border-radius: 20px; */
+    width: 60%;
+    margin: 0px auto;
+}
+
+@media (max-width: 600px){
+    .hero-content .search form {
+        width: 100%;
+    }
 }
 
 .hero-content .search input {
     display: block;
-    width: 93%;
+    width: 90%;
     font-size: 1rem;
     padding: 15px 7px;
     border: none;
     outline: none;
     background: transparent;
+    transition: all 200ms;
+}
+
+.hero-content .search input:hover {
+    display: block;
+    width: 90%;
+    font-size: 1rem;
+    padding: 15px 7px;
+    border: none;
+    outline: none;
+    background: transparent;
+    box-shadow: inset 0px 0px 6px 3px rgb(255, 90, 82, .5);
+    transition: all 200ms;
 }
 
 .hero-content .search button {
     display: block;
-    width: 7%;
+    width: 10%;
     padding: 15px 7px;
     text-align: center;
     background-color: #ff5850;
     color: #fff;
     border: none;
     outline: none;
+    transition: all 200ms;
+}
+
+.hero-content .search button:hover {
+    display: block;
+    width: 10%;
+    padding: 15px 7px;
+    text-align: center;
+    background-color: #ff5850;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: inset 0px 0px 20px 10px rgba(38, 80, 130, .7);
+    transition: all 200ms;
 }
 
 @media (max-width: 650px) {
@@ -381,6 +422,18 @@ html, body {
     color: #fff;
     border-radius: 50%;
     padding: 10px;
+    transition: all 200ms;
+}
+
+.hero-content .secteurs .item i:hover {
+    width: 100px;
+    height: 100px;
+    background-color: #ff5950;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 0px 20px 10px rgba(38, 80, 130, .7);
+    transition: all 200ms;
 }
 
 .hero-content .secteurs .item h5 {
