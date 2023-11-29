@@ -36,39 +36,64 @@
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-Emploi</h5>
                                     </a>
-                                    <a href="{% url 'home:formation' %}" class="d-flex flex-column align-items-center text-center item">
+                                    <a href="{% url 'home:formation' %}" class="d-flex flex-column align-items-center text-center item d-none d-md-block">
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-Formations</h5>
                                     </a>
-                                    <a href="{% url 'home:appel' %}" class="d-flex flex-column align-items-center text-center item">
+                                    <a href="{% url 'home:appel' %}" class="d-flex flex-column align-items-center text-center item d-none d-md-block">
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-RH</h5>
                                     </a>
-                                    <a href="{% url 'home:immobilier' %}" class="d-flex flex-column align-items-center text-center item">
+                                    <a href="{% url 'home:immobilier' %}" class="d-flex flex-column align-items-center text-center item d-none d-lg-block">
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-Immo</h5>
                                     </a>
-                                    <a href="{% url 'home:achat' %}" class="d-flex flex-column align-items-center text-center item">
+                                    <a href="{% url 'home:achat' %}" class="d-flex flex-column align-items-center text-center item d-none">
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-Services</h5>
                                     </a>
-                                    <a href="#i" class="d-flex flex-column align-items-center text-center item">
+                                    <a href="#i" class="d-flex flex-column align-items-center text-center item d-none">
                                         <i class="fa fa-user"></i>
                                         <h5 class="m-0">Strata-Entrepreneur</h5>
                                     </a>
-                                    <a href="#i" class="d-flex flex-column align-items-center text-center item position-relative">
+
+                                    <button class="d-flex flex-column align-items-center text-center item item-button position-relative" style="background: transparent; border: none; outline: none;">
                                         <i class="fa fa-user"></i>
-                                        <div class="sub-secteurs position-absolute" style="bottom: 100px; right: 5px;">
-                                            <ul class="list-group">
-                                                <li class="list-group-item">Item</li>
-                                                <li class="list-group-item">Item</li>
-                                                <li class="list-group-item">Item</li>
-                                                <li class="list-group-item">Item</li>
-                                                <li class="list-group-item">Item</li>
-                                                <li class="list-group-item">Item</li>
+                                        <div class="sub-secteurs sub-hide">
+                                            <ul class="list-group"> 
+                                                <li class="list-group-item d-md-none" style="min-width: 300px;">
+                                                    <a href="#i" class="d-flex align-items-center text-center">
+                                                        <i class="fa fa-user" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 5px;"></i>
+                                                        <span>Strata-Formation</span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item d-md-none" style="min-width: 300px;">
+                                                    <a href="#i" class="d-flex align-items-center text-center">
+                                                        <i class="fa fa-user" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 5px;"></i>
+                                                        <span>Strata-RH</span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item d-lg-none" style="min-width: 300px;">
+                                                    <a href="#i" class="d-flex align-items-center text-center">
+                                                        <i class="fa fa-user" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 5px;;"></i>
+                                                        <span>Strata-Immo</span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item" style="min-width: 300px;">
+                                                    <a href="#i" class="d-flex align-items-center text-center">
+                                                        <i class="fa fa-user" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 5px;;"></i>
+                                                        <span>Strata-Services</span>
+                                                    </a>
+                                                </li>
+                                                <li class="list-group-item" style="min-width: 300px;">
+                                                    <a href="#i" class="d-flex align-items-center text-center">
+                                                        <i class="fa fa-user" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 5px;;"></i>
+                                                        <span>Strata-Entrepreneur</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

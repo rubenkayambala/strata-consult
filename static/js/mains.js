@@ -33,6 +33,11 @@
         $("#login").toggleClass("form-hide form-show")
     })
 
+
+    $(".item-button").on("click", () => {
+        $(".sub-secteurs").toggleClass("sub-hide sub-show")
+    })
+
     $('.hero-banner').slick({
         autoplay: true,
         dots: false,
@@ -40,20 +45,6 @@
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        // responsive: [
-        //     {
-        //       breakpoint: 768,
-        //       settings: {
-        //         slidesToShow: 1
-        //       }
-        //     },
-        //     {
-        //       breakpoint: 480,
-        //       settings: {
-        //         slidesToShow: 1
-        //       }
-        //     }
-        // ]
     })
 
 })(jQuery);

@@ -332,16 +332,46 @@ html, body {
     outline: none;
 }
 
+@media (max-width: 650px) {
+    .hero-content .search input {
+        display: block;
+        width: 89%;
+    }
+
+    .hero-content .search button {
+        display: block;
+        width: 10%;
+    }
+}
+
 .hero-content .hero-banner img {
     width: 100%;
     height: 300px;
 }
 
 .hero-content .secteurs .item {
-    width: calc(100% / 7);
+    width: calc(100% / 6);
     margin-bottom: 3px;
     margin-right: 8px;
     z-index: 5;
+}
+
+@media (max-width: 650px) {
+    .hero-content .secteurs .item {
+        width: calc(100% / 3);
+        margin-bottom: 3px;
+        margin-right: 8px;
+        z-index: 5;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content .secteurs .item {
+        width: calc(100% / 5);
+        margin-bottom: 3px;
+        margin-right: 8px;
+        z-index: 5;
+    }
 }
 
 .hero-content .secteurs .item i {
@@ -357,6 +387,20 @@ html, body {
     font-size: 0.9rem;
     color: #fff;
     padding-top: 10px;
+}
+
+.sub-show {
+    position: absolute;
+    right: -30px;
+    bottom: 80px;
+    transition: all 300ms;
+}
+
+.sub-hide {
+    position: absolute;
+    right: 0px;
+    bottom: -500px;
+    transition: all 300ms;
 }
 
 .hero-content .right a {
