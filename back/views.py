@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from accounts.models import CustomUser
 from back.models import Subject, Formation, Domaine, Emploi
+# from back.models import Subject, Formation, Domaine, Emploi
 from django.contrib.auth import get_user_model
 
 User = get_user_model()

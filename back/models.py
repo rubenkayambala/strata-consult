@@ -79,22 +79,22 @@ class Emploi(models.Model):
 
 
 PATEFORME = (
-    ('Amazone', 'amazone'),
-    ('Alibaba', 'alibaba'),
-    ('Ebay', 'ebay'),
+    ('amazone', 'Amazone'),
+    ('alibaba', 'Alibaba'),
+    ('ebay', 'Ebay'),
 )
 
 LIVRAISON = (
-    ('En cours', 'en cours'),
-    ('Livré', 'livré'),
+    ('en cours', 'En cours'),
+    ('livré', 'Livré'),
 )
 
 class Achat(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     plateforme = models.CharField(choices=PATEFORME, max_length=15)
     lien = models.CharField(max_length=300)
-    adresse = models.CharField(max_length=100)
-    livraison = models.CharField(choices=LIVRAISON, max_length=15)
+    adresse = models.CharField(max_length=200)
+    livraison = models.CharField(choices=LIVRAISON, default='en cours', max_length=15)
     date = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 

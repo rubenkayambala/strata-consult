@@ -5,7 +5,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib import messages
 from .forms import UserUpdateForm
 from django.contrib.auth.decorators import login_required
-from back.models import Formation, Emploi
+from back.models import Formation, Emploi, Achat
 from django.contrib.auth import get_user_model
 
 
@@ -85,4 +85,15 @@ def UpdateProfile(request, pk):
 def MesFormations(request):
     current_user = request.user
     return render(request, 'accounts/formations.html')
+
+
+@login_required
+def MesCommandes(request):
+    current_user = request.user
+    commandes = Achat.objects.filter(user=current_user, livraison='en cours')
+    template_name = 'accounts/commandes.html'
+    context = {
+        'commandes': commandes,
+    }
+    return render(request, template_name, context)
     

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Home, Search, BigSearch, Etude_sol, EmploiList, DetailEmploi, Appel, assistance_emploi, Immobilier, Achat, FormationList, DetailFormation, FollowFormation, UnfollowFormation, Contact, about
+from .views import Home, Search, BigSearch, Etude_sol, EmploiList, DetailEmploi, Appel, assistance_emploi, Immobilier, AchatView, FormationList, DetailFormation, FollowFormation, UnfollowFormation, Contact, about
 
 app_name = 'home'
 
@@ -12,7 +12,7 @@ urlpatterns = [
     path('emploi_detail/<int:pk>/', DetailEmploi, name='detail_emploi'),
     path('appel_d_offre/', Appel, name='appel'),
     path('immobilier/', Immobilier, name='immobilier'),
-    path('achat/', Achat, name='achat'),
+    path('achat/', AchatView, name='achat'),
     path('assistance_emploi/', assistance_emploi, name='assistance_emploi'),
     path('formations/', FormationList, name='formation'),
     path('formation/<str:slug>/', DetailFormation, name='detail_formation'),

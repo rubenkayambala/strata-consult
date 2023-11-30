@@ -54,8 +54,23 @@
                         </div>
 
 
-                        <form action="" method="post">
-                            
+                        <form action="/achat/" method="post" class="achat-form bg-white p-3 my-2 rounded">
+                            <h4 class="mb-3">Passez votre commande</h4>
+                            {% csrf_token %}
+                            <p><select name="plateforme" class="form-control p-3" required="" id="id_plateforme">
+                                <option value="" selected="">Choisissez une plateforme</option>
+
+                                <option value="amazone">Amazone</option>
+
+                                <option value="alibaba">Alibaba</option>
+
+                                <option value="ebay">Ebay</option>
+
+                               </select>
+                            </p>
+                            <p><input type="text" name="lien" class="form-control p-3" placeholder="Inserez le lien de l'article" maxlength="300" required="" id="id_lien"></p>
+                            <p><input type="text" name="adresse" class="form-control p-3" placeholder="Inserez l'adresse de livraison" maxlength="200" required="" id="id_adresse"></p>
+                            <button type="submit" style="background-color: transparent; border: 1px solid #aaa; padding: 8px 30px; border-radius: 8px;">Commander</button>
                         </form>
 
 
@@ -95,5 +110,18 @@
             </div>
         </div>
         <!-- Blog End -->
+
+
+        <!-- Message Start -->
+        {% if messages %}
+            {% for message in messages %}
+                <div style="position: fixed; bottom: 30px; width: 100%;">
+                    <div class="d-flex justify-content-center">
+                        <span class="alert alert-success text-center">{{message}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <!-- Message End -->
 
 {% endblock %}

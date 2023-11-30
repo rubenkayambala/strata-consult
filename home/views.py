@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib import messages
 from django.db.models import Q
-from back.models import Subject, Formation, Domaine, Emploi
+from back.models import Subject, Formation, Domaine, Emploi, Achat
+from back.forms import AchatForm
 
 
 def Home(request):
@@ -69,9 +71,17 @@ def Immobilier(request):
     template_name = 'home/immobilier.html'
     return render(request, template_name)
 
-def Achat(request):
-    template_name = 'home/achat.html'
-    return render(request, template_name)
+def AchatView(request):
+    user = request.user
+    plateforme = request.POST.get('plateforme')
+    lien = request.POST.get('lien')
+    adresse = request.POST.get('adresse')
+    if request.method=='POST':
+        Achat.objects.create(user=user, plateforme=plateforme, lien=lien, adresse=adresse)
+        messages.success(request, "Votre commande a été envoyé avec succès")
+        return HttpResponseRedirect(reverse('home:achat'))
+    else:
+        return render(request, 'home/achat.html')
 
 
 def FormationList(request):
@@ -108,6 +118,7 @@ def FollowFormation(request, slug):
     else:
         return render(request, 'home/formation.html')
     return render(request, template_name, context)
+
 
 def UnfollowFormation(request, slug):
     user = request.user
