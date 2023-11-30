@@ -10,7 +10,7 @@
     <body style="background-image: url({% static 'img/logo.png' %}); background-repeat: no-repeat; background-size: contain;">
         
         <!-- Register Start -->
-        <div class="container-fluid p-3" style="background: transparent; position: relative;">
+        <div class="container-fluid p-3" style="background: rgba(0, 0, 0, .5); position: relative;">
             <div class="container">
                 <div class="row g-5 box wow fadeInUp justify-content-between py-3">
                     <div class="col-lg-6 d-none d-lg-block">
@@ -30,13 +30,29 @@
                                 {{form.full_name}}
                             </div>
                             <div class="mb-4">
-                                {{form.gender}}
+                                <select name="gender" class="form-control p-3" required="" id="id_gender">
+                                    <option value="" selected disabled>Genre</option>
+                                  
+                                    <option value="M">M</option>
+                                  
+                                    <option value="F">F</option>
+                                  
+                                </select>
                             </div>
                             <div class="mb-4">
                                 {{form.birthday}}
                             </div>
                             <div class="mb-4">
-                                {{form.profile}}
+                                <select name="profile" class="form-control p-3" required="" id="id_profile">
+                                    <option value="" selected disabled>Votre profile</option>
+                                  
+                                    <option value="Consommateur">Consommateur</option>
+                                  
+                                    <option value="Ambassadeur">Ambassadeur</option>
+                                  
+                                    <option value="Partenaire">Partenaire</option>
+                                  
+                                  </select>
                             </div>
                             <div class="mb-4">
                                 {{form.phone}}
@@ -50,8 +66,10 @@
                             <div class="mb-4">
                                 {{form.password}}
                             </div>
-                            <button class="btn btn-primary border-0 py-2 px-3 rounded-pill" type="submit">S'enregistrer</button>
-                            ou <a href="#login" class="login-btn"><u>Se connecter</u></a>
+                            <button class="btn btn-primary border-0 py-2 px-3 d-block w-100 text-center mb-1" type="submit">S'enregistrer</button>
+                            <p class="text-center">
+                                ou <a href="#login" class="login-btn"><small>Se connecter</small></a>
+                            </p>
                         </form>
                     </div>
                 </div>

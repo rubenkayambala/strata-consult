@@ -9,8 +9,8 @@ GENDER = (
 
 PROFILE = (
     ('Consommateur', 'Consommateur'),
-    ('Partenaire', 'Partenaire'),
     ('Ambassadeur', 'Ambassadeur'),
+    ('Partenaire', 'Partenaire'),
 )
 
 class CustomUser(AbstractUser):

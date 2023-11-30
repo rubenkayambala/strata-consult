@@ -37,7 +37,7 @@
                             <a href="{% url 'home:formation' %}" class="nav-item nav-link">Strata-Formation</a>
                             <a href="{% url 'home:achat' %}" class="nav-item nav-link">Facilitation achat en ligne</a>
                             <a href="{% url 'home:contact' %}" class="nav-item nav-link">Contact</a>
-                            <a href="#" class="nav-item nav-link">A propos</a>
+                            <a href="#footer" class="nav-item nav-link">A propos</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="buttons d-flex">
-                    <a href="#r"><img src="{% static 'img/search.png' %}" alt=""> <span class="d-none d-md-inline">RECHERCHE</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#r" class="top-search-btn"><img src="{% static 'img/search.png' %}" alt=""> <span class="d-none d-md-inline">RECHERCHE</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
                     {% if user.is_authenticated %}
                     <a href="{% url 'accounts:profile' request.user.username %}"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">PROFILE</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="{% url 'accounts:logout' %}"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">DECONNEXION</span></a>
@@ -57,7 +57,7 @@
                     <a href="{% url 'back:dashboard' %}">&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">ADMIN</span></a>
                     {% endif %}
                     {% else %}
-                    <a href="#login" class="login-btn"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">CONNEXION</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="#login" class="login-btn d-flex"><img src="{% static 'img/user.png' %}" alt=""> <span class="d-none d-md-inline">CONNEXION</span></a> &nbsp;&nbsp;&nbsp;&nbsp;
                     {% endif %}
                 </div>
             </nav>
@@ -65,6 +65,57 @@
         <!-- Navbar End -->
 
         {% block content %}{% endblock %}
+
+
+
+        <!-- Form Start -->
+        <div id="myform" class="container-fluid form-hide">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <span>.</span>
+                    
+                </div>
+                <div class="row g-5 box wow fadeInUp justify-content-between">
+                    <div class="col-lg-6 d-none d-lg-block">
+                    </div>
+                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
+                        <img src="{% static 'img/close.png' %}" alt="" class="myform-btn" id="login-close">
+                        <div class="py-2">
+                            <h2 class="mb-4 animated slideInDown" style="color: #255085;">Formulaire</h2>
+                        </div>
+                        <form method="post" class="rounded contact-form mb-3">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <input type="text" class="form-control p-3" placeholder="Donnée" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control p-3" placeholder="Donnée" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="w-100" rows="10"></textarea>
+                            </div>
+                            <button class="btn btn-primary border-0 py-2 d-block w-100 mb-2" type="submit">Soumettre</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Form End -->
+
+
+        <!-- SearchBar Start -->
+        <div id="SearchBar" class="container-fluid form-hide">
+            <div class="container">
+                <div class="search mb-2 text-center">
+                    <form action="{% url 'home:big-search' %}" method="get" class="w-100">
+                        <input type="text" name="query" placeholder="Tapez votre recherche..." style="width: 88%; padding: 10px 80px 10px 10px;">
+                        <button tupe="submit" style="width: 10%; padding: 10px 0px; background-color: #ff5950; color: #fff;"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- SearchBar End -->
+
 
         <!-- Login Start -->
         <div id="login" class="container-fluid form-hide">
@@ -89,8 +140,13 @@
                             <div class="mb-4">
                                 <input type="password" class="form-control p-3" name="password" placeholder="Mot de passe" required>
                             </div>
-                            <button class="btn btn-primary border-0 py-2 px-3 rounded-pill" type="submit">Se connecter</button>
-                            ou <a href="{% url 'accounts:register' %}"><u>S'enregistrer</u></a>
+                            <button class="btn btn-primary border-0 py-2 d-block w-100 mb-2" type="submit">Se connecter</button>
+                            <p class="m-0 text-center">ou <a href="{% url 'accounts:register' %}"><small>S'enregistrer</small></a></p>
+                            <hr>
+                            <div class="text-center">
+                                <small>Se connecter avec</small><br>
+                                <button type="button" class="btn btn-danger d-block mt-2 w-100">Google</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -98,14 +154,17 @@
         </div>
         <!-- Login End -->
 
+
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay=".3s">
+        <div id="footer" class="container-fluid footer py-5 wow fadeIn" data-wow-delay=".3s">
             <div class="container py-5">
                 <div class="row justify-content-between g-4 footer-inner">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
-                            <h4 class="text-white fw-bold mb-4">A propos Strata.</h4>
-                            <small>Une entreprise dynamique, passionnée pour la recherche et l’innovation ; engager à apporter des solutions aux besoins de base des entreprises et des particuliers.</small>
+                            <h4 class="text-white text-center fw-bold mb-4">A propos Strata.</h4>
+                            <div class="text-center">
+                                <small>Une entreprise dynamique, passionnée pour la recherche et l’innovation ; engager à apporter des solutions aux besoins de base des entreprises et des particuliers.</small>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -134,18 +193,9 @@
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4 text-white" style="background-color: #303944">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center align-items-center">
                     <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
                         <span>© 2023 Strata Consult, Tout droit réservé</span>
-                    </div>
-                    <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="col-md-4 my-auto text-center text-md-end text-white">
-                        Réalisé par <a class="border-bottom" href="#">K-360</a>
                     </div>
                 </div>
             </div>

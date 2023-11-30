@@ -1,10 +1,12 @@
 from django.urls import path
-from .views import Home, Etude_sol, EmploiList, DetailEmploi, Appel, assistance_emploi, Immobilier, Achat, FormationList, DetailFormation, FollowFormation, UnfollowFormation, Contact, about
+from .views import Home, Search, BigSearch, Etude_sol, EmploiList, DetailEmploi, Appel, assistance_emploi, Immobilier, Achat, FormationList, DetailFormation, FollowFormation, UnfollowFormation, Contact, about
 
 app_name = 'home'
 
 urlpatterns = [
     path('', Home, name='home'),
+    path('search/', Search, name='search'),
+    path('searchs/', BigSearch, name='big-search'),
     path('etude_sol/', Etude_sol, name='etude_sol'),
     path('emploi/', EmploiList, name='emploi'),
     path('emploi_detail/<int:pk>/', DetailEmploi, name='detail_emploi'),

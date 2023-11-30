@@ -11,20 +11,16 @@
             
             <div class="hero-content">
                 <div class="row m-0 h-100 align-items-between">
-                    <div class="col-12"></div>
+                    <div class="col-12 mb-5"></div>
                     <div class="col-12 mb-3 mx-auto">
-                        <div class="search mb-2 text-center">
-                            <form method="post" class="d-flex mb-5">
-                                {% csrf_token %}
-                                <input type="text" placeholder="Recherche d'offre">
+                        <div class="search text-center">
+                            <form method="get" action="{% url 'home:search' %}" class="d-flex mb-5">
+                                <input type="text" name="q" placeholder="Recherche d'offre">
                                 <button tupe="submit"><i class="fa fa-search"></i></button>
                             </form>
-                            <small class="text-white">Nous sommes engagé à apporter des solutions aux besoins
-                                de base des entreprises et des particuliers; <br> et réduire sensiblement les inégalités sociales</small>
+                            <small class="text-white"><strong>Nous sommes engagé à apporter des solutions aux besoins
+                                de base des entreprises et des particuliers; <br> et réduire sensiblement les inégalités sociales</strong></small>
                         </div>
-                        <!-- <video style="display: block; width: 100%; margin: 0px auto;" autoplay muted loop>
-                            <source src="{% static 'img/strata_front.mp4' %}">
-                        </video> -->
                     </div>
                     <div class="col-12 mb-3 mx-auto">
                         <div class="row align-items-end h-100">
@@ -225,20 +221,20 @@
                             </div>
                             <hr>
                             <div class="p-4 py-2 text-center blog-btn">
-                                <a href="{% url 'home:formation' %}" type="button" class="text-dark">Découvrir</a>
+                                <a {% if request.user.is_authenticated %}href="{% url 'accounts:profile' request.user.username %}" class="text-dark"{% else %}href="#login" class="login-btn text-dark"{% endif %} type="button">Découvrir</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-3 blog-item wow fadeInUp" data-wow-delay=".6s">
                         <img src="{% static 'img/img8.jpg' %}" class="rounded-top" alt="">
-                         <div class="rounded-bottom bg-light text-center">
+                        <div class="rounded-bottom bg-light text-center">
                             <div class="px-4 pb-0 pt-2">
                                 <h6>Plus de services</h6>
                                 <small><i>Rechercher un service</i></small>
                             </div>
                             <hr>
                             <div class="p-4 py-2 text-center blog-btn">
-                                <a href="{% url 'home:formation' %}" type="button" class="text-dark">Découvrir</a>
+                                <a href="#req" type="button" class="top-search-btn text-dark" style="display: inline;">Découvrir</a>
                             </div>
                         </div>
                     </div>

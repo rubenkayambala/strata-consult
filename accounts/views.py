@@ -12,7 +12,6 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-@login_required
 def Register(request):
     template_name = 'accounts/register.html'
     if request.method == "POST":
@@ -22,7 +21,11 @@ def Register(request):
             return HttpResponseRedirect('/')
         else:
             messages.error(request, "Données incorrectes! Réessayez")
-            return render(request, template_name)
+            form = UserUpdateForm()
+            context = {
+                'form': form,
+            }
+            return render(request, template_name, context)
     form = UserUpdateForm()
     context = {
         'form': form,

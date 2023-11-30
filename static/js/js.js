@@ -24,10 +24,19 @@
         $('.back-to-top').fadeOut('slow');
     }
     });
+
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
+
+    $(".myform-btn").on("click", () => {
+        $("#myform").toggleClass("form-hide form-show")
+    })
+
+    $(".top-search-btn").on("click", () => {
+        $("#SearchBar").toggleClass("form-hide form-show")
+    })
 
     $(".login-btn").on("click", () => {
         $("#login").toggleClass("form-hide form-show")

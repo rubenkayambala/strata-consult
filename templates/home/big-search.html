@@ -1,0 +1,89 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Recherche - {{query}}{% endblock %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid p-0" style="background-image: url({% static 'img/img6.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
+            <div style="padding: 100px 5%; background-color: rgba(0, 0, 0, 0.3);">
+                <h3 class="text-white mb-4 px-2 py-3 text-center animated slideInDown">Recherche pour <strong>{{query}}</strong></h3>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Blog Start -->
+        {% if emplois %}
+        <div class="container-fluid">
+            <div class="container pb-5">
+                <div class="row m-0 box">
+                    <div class="col-12"><h3>Emplois</h3></div>
+                    <div class="col-lg-8 items">
+                        {% for emploi in emplois %}
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-4 p-0">
+                                <img src="{{emploi.image.url}}" alt="{{emploi.poste}}">
+                            </div>
+                            <div class="col-8 content">
+                                <h5><a href="{% url 'home:detail_emploi' emploi.pk %}">{{emploi.poste}}</a></h5>
+                                <p class="m-0 py-2">{{emploi.description}}</p>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <!-- Blog End -->
+
+
+        {% if formations %}
+        <div class="container-fluid formation">
+            <div class="container pb-5">
+                <div class="row m-0">
+                    <div class="col-12"><h3>Formations</h3></div>
+                    {% for formation in formations %}
+                    <div class="col-lg-4 col-md-6 mb-3 blog-item wow fadeInUp" data-wow-delay=".6s">
+                        <img src="{{formation.image.url}}" class="rounded-top" alt="{{formation.title}}">
+                         <div class="rounded-bottom bg-light">
+                            <div class="px-4 pb-0 py-2">
+                                <h5>{{formation.title}}</h5>
+                                <span>Par : {{formation.auteur}}</span> <br>
+                                <span>Durée : {{formation.duree}}</span>
+                            </div>
+                            <hr>
+                            <div class="p-4 py-2 text-center blog-btn">
+                                <a href="{% url 'home:detail_formation' formation.slug %}" type="button" class="text-dark">Détails</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="row mx-0 mt-3">
+                    <div class="col-12">
+                        <h4>Trouvez les formations par sujet</h4>
+                    </div>
+                    <div class="col-12 sujet-list">
+                        <div class="d-flex">
+                            <a href="formation_sujet.html">Informatique</a>
+                            <a href="#">Entrepreneuriat</a>
+                            <a href="#">Ingegnerie</a>
+                            <a href="#">Construction</a>
+                            <a href="#">Robotique</a>
+                            <a href="#">Marketing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+{% endblock %}

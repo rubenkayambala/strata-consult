@@ -7,17 +7,20 @@
 {% block content %}
         
         <!-- Page Header Start -->
-        <div class="container-fluid page-header py-5">
+        <!-- <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
                 <h3 class="text-white mb-4 p-2 animated slideInDown">Contact</h3>
             </div>
-        </div>
+        </div> -->
         <!-- Page Header End -->
 
         <!-- Contact Start -->
         <div class="container-fluid py-5">
             <div class="container py-5">
                 <div class="row g-5 mb-5">
+                    <div class="col-12">
+                        <h2 class="text-center">Nous contacter</h2>
+                    </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="h-100">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001583.639214438!2d-78.4099249913019!3d42.71993723844549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1687175686342!5m2!1sen!2sbd" class="border-0 rounded w-100 h-100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -26,10 +29,10 @@
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                         <form method="post" class="rounded contact-form">
                             <div class="mb-4">
-                                <input type="text" class="form-control p-3" placeholder="Votre Nom" required>
+                                <input type="text" class="form-control p-3" placeholder="Nom complet" required>
                             </div>
                             <div class="mb-4">
-                                <input type="email" class="form-control p-3" placeholder="Votre Email" required>
+                                <input type="email" class="form-control p-3" placeholder="Email" required>
                             </div>
                             <div class="mb-4">
                                 <input type="text" class="form-control p-3" placeholder="Subjet" required>
@@ -37,15 +40,15 @@
                             <div class="mb-4">
                                 <textarea class="w-100 form-control p-3" rows="6" cols="10" placeholder="Message" required></textarea>
                             </div>
-                            <button class="btn btn-primary border-0 py-3 px-4 rounded-pill" type="submit">Envoyer</button>
+                            <button class="btn text-white border-0 py-3 px-4 rounded-pill" type="submit" style="background-color: #ff5850;">Envoyer</button>
                         </form>
                     </div>
                 </div>
                 <div class="row g-4 wow fadeInUp" data-wow-delay=".3s">
                     <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="d-flex bg-light p-3 rounded contact-btn-link">
-                            <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3" style="width: 64px; height: 64px;">
-                                <i class="fa fa-share text-dark"></i>
+                            <div class="flex-shrink-0 d-flex align-items-center justify-content-center rounded-circle p-3 ms-3" style="width: 55px; height: 55px; background-color: #ff5850; color:#fff;">
+                                <i class="fa fa-share"></i>
                             </div>
                             <div class="ms-3 contact-link">
                                 <h4 class="text-dark">Nous suivre</h4>
@@ -61,8 +64,8 @@
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="d-flex bg-light p-3 rounded contact-btn-link">
-                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3" style="width: 64px; height: 64px;">
-                                <i class="fas fa-map-marker-alt text-dark"></i>
+                            <div class="d-flex align-items-center justify-content-center rounded-circle p-3 ms-3" style="width: 55px; height: 55px; background-color: #ff5850; color:#fff;">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="ms-3 contact-link">
                                 <h4 class="text-dark">Addresse</h4>
@@ -74,23 +77,23 @@
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="d-flex bg-light p-3 rounded contact-btn-link">
-                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3" style="width: 64px; height: 64px;">
-                                <i class="fa fa-phone text-dark"></i>
+                            <div class="d-flex align-items-center justify-content-center rounded-circle p-3 ms-3" style="width: 55px; height: 55px; background-color: #ff5850; color:#fff;">
+                                <i class="fa fa-phone"></i>
                             </div>
                             <div class="ms-3 contact-link">
                                 <h4 class="text-dark">Nous contacter</h4>
-                                <a class="h5 text-dark fs-6" href="tel:+0123456789">+243 991 795 930</a>
+                                <a class="h5 text-dark fs-6" href="tel:+0123456789">+000 000 000 000</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="d-flex bg-light p-3 rounded contact-btn-link">
-                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle p-3 ms-3" style="width: 64px; height: 64px;">
-                                <i class="fa fa-envelope text-dark"></i>
+                            <div class="d-flex align-items-center justify-content-center rounded-circle p-3 ms-3" style="width: 55px; height: 55px; background-color: #ff5850; color:#fff;">
+                                <i class="fa fa-envelope"></i>
                             </div>
                             <div class="ms-3 contact-link">
                                 <h4 class="text-dark">Notre Email</h4>
-                                <a class="h5 text-dark fs-6" href="#">info@example.com</a>
+                                <a class="h5 text-dark fs-6" href="#">infos@strata-consult.com</a>
                             </div>
                         </div>
                     </div>

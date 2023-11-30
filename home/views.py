@@ -1,12 +1,35 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.db.models import Q
 from back.models import Subject, Formation, Domaine, Emploi
 
 
 def Home(request):
     template_name = 'home/index.html'
     return render(request, template_name)
+
+def Search(request):
+    query = request.GET.get('q')
+    emplois = Emploi.objects.filter(Q(poste__icontains=query) | Q(description__icontains=query))
+    template_name = 'home/search.html'
+    context = {
+        'query': query,
+        'emplois': emplois,
+    }
+    return render(request, template_name, context)
+
+def BigSearch(request):
+    query = request.GET.get('query')
+    emplois = Emploi.objects.filter(Q(poste__icontains=query) | Q(description__icontains=query))
+    formations = Formation.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+    template_name = 'home/big-search.html'
+    context = {
+        'query': query,
+        'emplois': emplois,
+        'formations': formations,
+    }
+    return render(request, template_name, context)
 
 def Etude_sol(request):
     template_name = 'home/etude_sol.html'

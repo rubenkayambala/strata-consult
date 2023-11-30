@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Recherche - {{query}}{% endblock %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="container-fluid p-0" style="background-image: url({% static 'img/img6.jpg' %}); background-size: cover; margin-bottom: 6rem;;">
+            <div style="padding: 100px 5%; background-color: rgba(0, 0, 0, 0.3);">
+                <h3 class="text-white mb-4 px-2 py-3 text-center animated slideInDown">Recherche pour <strong>{{query}}</strong></h3>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid">
+            <div class="container pb-5">
+                <div class="row m-0 box">
+                    {% if emplois %}
+                    <div class="col-lg-8 items">
+                        <div class="d-flex title">
+                            <h5 class="mb-"><a href="{% url 'home:emploi' %}" class="active">Offres d'emploi</a></h5>
+                            <h5 class="mb-2"><a href="{% url 'home:appel' %}" class="">Appel d'offre</a></h5>
+                            <h5 class="mb-2"><a href="{% url 'home:assistance_emploi' %}" class="">Assistance emploi</a></h5>
+                        </div>
+                        <hr class="mt-0">
+                        {% for emploi in emplois %}
+                        <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
+                            <div class="col-4 p-0">
+                                <img src="{{emploi.image.url}}" alt="{{emploi.poste}}">
+                            </div>
+                            <div class="col-8 content">
+                                <h5><a href="{% url 'home:detail_emploi' emploi.pk %}">{{emploi.poste}}</a></h5>
+                                <p class="m-0 py-2">{{emploi.description}}</p>
+                            </div>
+                        </div>
+                        <hr class="my-2">
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <h1 class="text-muted">Aucun emploi pour <strong>{{query}}</strong></h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+{% endblock %}
