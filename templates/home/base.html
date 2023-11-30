@@ -69,19 +69,19 @@
 
 
         <!-- Form Start -->
-        <div id="myform" class="container-fluid form-hide">
+        <div id="myform" class="container-fluid form-hide mb-3">
             <div class="container">
                 <div class="d-flex justify-content-between">
                     <span>.</span>
                     
                 </div>
-                <div class="row g-5 box wow fadeInUp justify-content-between">
+                <div class="row g-5 box animated slideInUp justify-content-between position-relative">
                     <div class="col-lg-6 d-none d-lg-block">
                     </div>
-                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
-                        <img src="{% static 'img/close.png' %}" alt="" class="myform-btn" id="login-close">
+                    <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px; margin-top: 0px;;">
+                        <img src="{% static 'img/close.png' %}" alt="" class="myform-btn close-btn" id="login-close">
                         <div class="py-2">
-                            <h2 class="mb-4 animated slideInDown" style="color: #255085;">Formulaire</h2>
+                            <h2 class="mb-4" style="color: #255085;">Formulaire</h2>
                         </div>
                         <form method="post" class="rounded contact-form mb-3">
                             {% csrf_token %}
@@ -92,7 +92,7 @@
                                 <input type="text" class="form-control p-3" placeholder="Donnée" required>
                             </div>
                             <div class="mb-4">
-                                <textarea class="w-100" rows="10"></textarea>
+                                <textarea class="form-control w-100" rows="10"></textarea>
                             </div>
                             <button class="btn btn-primary border-0 py-2 d-block w-100 mb-2" type="submit">Soumettre</button>
                         </form>
@@ -128,7 +128,7 @@
                     <div class="col-lg-6 d-none d-lg-block">
                     </div>
                     <div class="col-lg-6 form bg-white" data-wow-delay=".5s" style="border-radius: 10px;">
-                        <img src="{% static 'img/close.png' %}" alt="" class="login-btn" id="login-close">
+                        <img src="{% static 'img/close.png' %}" alt="" class="login-btn close-btn" id="login-close">
                         <div class="py-2">
                             <h2 class="mb-4 animated slideInDown" style="color: #255085;">Connectez-vous</h2>
                         </div>

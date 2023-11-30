@@ -883,7 +883,7 @@ html, body {
 
 .galery-etude-sol img {
     width: 100%;
-    height: 100px;
+    height: 200px;
     object-fit: cover;
     -o-object-fit: cover;
     transition: all 400ms;
@@ -893,6 +893,17 @@ html, body {
 .galery-etude-sol img:hover {
     transform: scale(1.2);
     transition: all 400ms;
+}
+
+@media (max-width: 700px) {
+    .galery-etude-sol img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        -o-object-fit: cover;
+        transition: all 400ms;
+        cursor: pointer;
+    }
 }
 /*** Etude sol End ***/
 
@@ -928,16 +939,17 @@ html, body {
     border-radius: 10px;
 }
 
-#login-close {
+.close-btn {
     position: absolute;
-    top: 60px;
+    top: 15px;
     right: 20px;
     cursor: pointer;
     width: 20px;
     transition: all 300ms;
+    z-index: 999;
 }
 
-#login-close:hover {
+.close-btn:hover {
     background-color: #eee;
     border-radius: 50%;
     padding: 8px;

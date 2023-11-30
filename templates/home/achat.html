@@ -34,8 +34,8 @@
         <!-- Blog Start -->
         <div class="container-fluid">
             <div class="container pb-5">
-                <div class="row m-0">
-                    <div class="col-lg-8 achat">
+                <div class="row justify-content-center m-0">
+                    <div class="col-lg-10 achat">
                         <div class="row m-0 detail wow fadeInUp mb-3" data-wow-delay=".6s">
                             <div class="col-12">
                                 <div class="overflow-hidden">
@@ -54,7 +54,7 @@
                         </div>
 
 
-                        <form action="/achat/" method="post" class="achat-form bg-white p-3 my-2 rounded">
+                        <form action="/achat/" method="post" class="achat-form bg-white p-3 mt-2 mb-5 rounded">
                             <h4 class="mb-3">Passez votre commande</h4>
                             {% csrf_token %}
                             <p><select name="plateforme" class="form-control p-3" required="" id="id_plateforme">
@@ -73,6 +73,7 @@
                             <button type="submit" style="background-color: transparent; border: 1px solid #aaa; padding: 8px 30px; border-radius: 8px;">Commander</button>
                         </form>
 
+                        <h6>Vous avez besoin d'un service ? <a href="#"><u>demander un service</u></a></h6>
 
                         <div class="row m-0 detail wow fadeInUp mt-5 mb-3" data-wow-delay=".6s">
                             <div class="col-12">
@@ -89,19 +90,22 @@
                             <div class="col-md-6 col-lg-4 p-1 mb-2">
                                 <img src="{% static 'img/b3.jpeg' %}" alt="">
                             </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 text-center mt-2">Ajouter ma boutique</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+
+
+                    <!-- <div class="col-lg-4">
                         <aside>
                             <ul class="list-group border-0">
-                                <li class="list-group-item"><button class="btn btn-primary">Formulaire de soumission d’une demande d’achat en ligne avec spécifications détailles</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Formulaire de soumission d’une demande d’un service en ligne</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Recherche lie à la base de données pour trouver une plateforme d’achat en ligne et faire ses commandes</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Main d’œuvre [agent immobilier, expert, courtiers, etc.]</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Formulaire de soumission d’une Demande pour référencer sa boutique en ligne [uniquement pour les vendeurs]</button></li>
+                                <li class="list-group-item"><button class="btn btn-primary">Demander un service en ligne</button></li>
+                                <li class="list-group-item"><button class="btn btn-primary">Trouver une plateforme d’achat en ligne</button></li>
+                                <li class="list-group-item"><button class="btn btn-primary">Réferencer ma boutique</button></li>
                             </ul>
                         </aside>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

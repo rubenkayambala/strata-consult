@@ -34,8 +34,8 @@
         <!-- Blog Start -->
         <div class="container-fluid">
             <div class="container pb-5">
-                <div class="row m-0 box">
-                    <div class="col-lg-8 items">
+                <div class="row justify-content-center m-0 box">
+                    <div class="col-lg-10 items">
                         <div class="d-flex title">
                             <h5 class="mb-"><a href="{% url 'home:emploi' %}" class="active">Offres d'emploi</a></h5>
                             <h5 class="mb-2"><a href="{% url 'home:appel' %}" class="">Appel d'offre</a></h5>
@@ -54,20 +54,9 @@
                         </div>
                         <hr class="my-2">
                         {% endfor %}
-                    </div>
-                    <div class="col-lg-4">
-                        <aside class="btn-primary">
-                            <ul class="list-group border-0">
-                                <li class="list-group-item myform-btn"><button class="btn btn-primary">Formulaire de demande d’inscription à la plate-forme</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Espace d’opportunité d’emploi et appel d’offre</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Formulaire d’inscription à la base de données [de la main d’œuvre] ou de soumission d’un besoin en main d’œuvre</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Bouton de recherche lie à la base de données pour trouver une main d’œuvre</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Espace de formation des candidats</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Formulaire de soumission d’une formation [uniquement pour le formateur]</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Tableau de bord du candidat pour le suivi de son dossier d’emploi, de formation et d’opportunités</button></li>
-                                <li class="list-group-item"><button class="btn btn-primary">Espace des candidats compètent [ main d’œuvre] avec leur profils</button></li>
-                            </ul>
-                        </aside>
+                        <br>
+                        <h5>Main d'oeuvre</h5>
+                        <button class="btn btn-primary">Soumettre une main d'oeuvre</button> ou soit <button class="btn btn-primary">Demander une main d'oeuvre</button>
                     </div>
                 </div>
             </div>
