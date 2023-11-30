@@ -10,6 +10,8 @@
                         <div class="overflow-hidden">
                             <h5 class="mb-4">Mes formations</h5>
                         </div>
+                        {% if formations %}
+                        {% for formation in formations %}
                         <div class="row m-0">
                             <div class="col-lg-4 col-md-6 mb-3 blog-item wow fadeInUp" data-wow-delay=".6s">
                                 <img src="{{formation.image.url}}" class="rounded-top" alt="{{formation.title}}">
@@ -21,11 +23,15 @@
                                     </div>
                                     <hr>
                                     <div class="p-4 py-2 text-center blog-btn">
-                                        <a href="{% url 'home:detail_formation' formation.slug %}" type="button" class="text-dark">Détails</a>
+                                        <a href="" type="button" class="text-dark">Détails</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
+                        {% else %}
+                        <h4 class="text-muted">Vous n'avez souscrit à aucune formation</h4>
+                        {% endif %}
                     </div>
 
 {% endblock %}

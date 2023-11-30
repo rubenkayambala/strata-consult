@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from accounts.models import CustomUser
-from back.models import Subject, Formation, Domaine, Emploi
+from back.models import Subject, Formation, Domaine, Emploi, Achat
 # from back.models import Subject, Formation, Domaine, Emploi
 from django.contrib.auth import get_user_model
 
@@ -12,6 +12,7 @@ def Dashboard(request):
     formations = Formation.objects.all()
     domaines = Domaine.objects.all()
     emplois = Emploi.objects.all()
+    commandes = Achat.objects.all()
     template_name = 'back/dashboard.html'
     context = {
         'users': users.count(),
@@ -19,6 +20,7 @@ def Dashboard(request):
         'formations': formations.count(),
         'domaines': domaines.count(),
         'emplois': emplois.count(),
+        'commandes': commandes.count(),
     }
     return render(request, template_name, context)
 
@@ -39,5 +41,23 @@ def Formations(request):
     context = {
         'subjects': subjects,
         'formations': formations,
+    }
+    return render(request, template_name, context)
+
+
+def Commandes(request):
+    commandes = Achat.objects.all().order_by('id')
+    template_name = 'back/commandes.html'
+    context = {
+        'commandes': commandes,
+    }
+    return render(request, template_name, context)
+
+
+def Emplois(request):
+    emplois = Emploi.objects.all().order_by('id')
+    template_name = 'back/emplois.html'
+    context = {
+        'emplois': emplois,
     }
     return render(request, template_name, context)

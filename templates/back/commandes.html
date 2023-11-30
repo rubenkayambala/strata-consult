@@ -1,0 +1,41 @@
+{% extends 'back/base.html' %}
+
+{% load static %}
+
+{% block title %}Formations{% endblock %}
+
+{% block admin %}
+
+<div class="container pb-5">
+    <div class="overflow-hidden">
+        <h4 class="mb-4">Mes Commandes</h4>
+    </div>
+    {% if commandes %}
+    <div class="table-responsive">
+        <table class="table border">
+            <thead>
+                <th class="pb-3">Utilisateur</th>
+                <th class="pb-3">Plateforme</th>
+                <th class="pb-3">Lien</th>
+                <th class="pb-3">Adresse</th>
+                <th class="pb-3">Livraison</th>
+                <th class="pb-3">Date</th>
+            </thead>
+            {% for commande in commandes %}
+            <tr>
+                <td class="pb-3">{{commande.user.username}}</td>
+                <td class="pb-3">{{commande.plateforme}}</td>
+                <td class="pb-3">{{commande.lien}}</td>
+                <td class="pb-3">{{commande.adresse}}</td>
+                <td class="pb-3">{{commande.livraison}}</td>
+                <td class="pb-3">{{commande.date}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <h5 class="text-muted">Il n'y a aucune commandes en cours</h5>
+    {% endif %}
+</div>
+
+{% endblock %}

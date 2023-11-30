@@ -1,0 +1,55 @@
+{% extends 'back/base.html' %}
+
+{% load static %}
+
+{% block title %}Formations{% endblock %}
+
+{% block admin %}
+
+                    <div class="container pb-5">
+                        <div class="overflow-hidden">
+                            <h3 class="mb-4">Formations</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table border">
+                                <thead>
+                                    <th class="pb-3">Image</th>
+                                    <th class="pb-3">Poste</th>
+                                    <th class="pb-3">Domaine</th>
+                                    <th class="pb-3">Auteur</th>
+                                    <th class="pb-3">Lieu</th>
+                                    <th class="pb-3">Tâche</th>
+                                    <th class="pb-3">Competences</th>
+                                    <th class="pb-3">Description</th>
+                                    <th class="pb-3">Membres</th>
+                                    <th class="pb-3">Clôture</th>
+                                    <th class="pb-3">Publié le</th>
+                                </thead>
+                                {% for emploi in emplois %}
+                                <tr>
+                                    <td class="pb-3"><img src="{{emploi.image.url}}" alt="{{emploi.title}}" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                                    <td class="pb-3">{{emploi.poste}}</td>
+                                    <td class="pb-3">{{emploi.domaine}}</td>
+                                    <td class="pb-3">{{emploi.entreprise}}</td>
+                                    <td class="pb-3">{{emploi.lieu}}</td>
+                                    <td class="pb-3" style="min-width: 150px;">{{emploi.tache|safe|truncatewords:10}}</td>
+                                    <td class="pb-3" style="min-width: 150px;">{{emploi.competence|safe|truncatewords:10}}</td>
+                                    <td class="pb-3" style="min-width: 150px;">{{emploi.description|safe|truncatewords:10}}</td>
+                                    <td class="pb-3">
+                                        {% if emploi.postuler.all %}
+                                        {% for item in emploi.postuler.all %}
+                                            {{item}}
+                                        {% endfor %}
+                                        {% else %}
+                                            Aucun pour l'instant
+                                        {% endif %}
+                                    </td>
+                                    <td class="pb-3">{{emploi.cloture}}</td>
+                                    <td class="pb-3">{{emploi.date}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+
+{% endblock %}

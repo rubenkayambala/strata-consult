@@ -65,11 +65,11 @@ class Emploi(models.Model):
     image = models.ImageField(upload_to='emploi/')
     entreprise = models.CharField(max_length=100)
     lieu = models.CharField(max_length=100)
-    cloture = models.DateField()
     description = models.TextField()
     tache = models.TextField()
     competence = models.TextField()
     postuler = models.ManyToManyField(User)
+    cloture = models.DateField()
     date = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 

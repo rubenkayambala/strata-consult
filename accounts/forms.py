@@ -13,10 +13,10 @@ class UserUpdateForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class': 'form-control p-3', 'placeholder': "Nom d'utilisateur"}),
             'full_name': forms.TextInput(attrs={'class': 'form-control p-3', 'placeholder': "Nom complet"}),
             'email': forms.TextInput(attrs={'class': 'form-control p-3', 'placeholder': 'Email'}),
-            'birthday': forms.DateInput(attrs={'class': 'form-control p-3', 'placeholder': 'Date de naissance'}),
+            'birthday': forms.DateInput(attrs={'class': 'form-control p-3', 'placeholder': 'Date de naissance. Format: JJ/MM/AA'}),
             'phone': forms.TextInput(attrs={'class': 'form-control p-3', 'placeholder': 'Téléphone'}),
             'gender': forms.Select(attrs={'class': 'form-control p-3'}),
             'profile': forms.Select(attrs={'class': 'form-control p-3'}),
-            'password': forms.TextInput(attrs={'class': 'form-control p-3', 'placeholder': 'Mot de passe'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control p-3', 'placeholder': 'Mot de passe'}),
         }
         

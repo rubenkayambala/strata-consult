@@ -84,7 +84,12 @@ def UpdateProfile(request, pk):
 @login_required
 def MesFormations(request):
     current_user = request.user
-    return render(request, 'accounts/formations.html')
+    formations = current_user.formation_set.all()
+    template_name = 'accounts/formations.html'
+    context = {
+        'formations': formations,
+    }
+    return render(request, template_name, context)
 
 
 @login_required
